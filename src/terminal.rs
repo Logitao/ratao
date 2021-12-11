@@ -22,6 +22,10 @@ impl Terminal {
         })
     }
 
+    pub fn clear_screen(&self) {
+        print!("\x1B[2J\x1B[1;1H");
+    }
+
     pub fn cleanup(&self) -> io::Result<()> {
         println!("Cleaning up\r\n");
         tcsetattr(io::stdin().as_raw_fd(), TCSAFLUSH, &self.original)?;

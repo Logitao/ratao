@@ -7,3 +7,5 @@ edition = "2018"
 
 [dependencies]
 termios = "0.3.3"
+async-std = {version = "1.10.0", features = ["attributes"]}
+
